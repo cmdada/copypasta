@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GNU/Linux Explanation</title>
+    <style>
+        :root {
+            --fg-color: #dedede;
+            --bg-color: #2a2a2a;
+            --sub-color: #aaaaaa;
+            --link-color: #66aaff;
+            --btn-bg-color: #444;
+            --btn-fg-color: #fff;
+            padding: 1em;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        [data-theme="light"] {
+            --fg-color: #2a2a2a;
+            --bg-color: #ffffff;
+            --sub-color: #777777;
+            --link-color: #1155cc;
+            --btn-bg-color: #eee;
+            --btn-fg-color: #000;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--fg-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 1em;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        h1, h2, h3, h4, h5, h6, p, li {
+            color: var(--fg-color);
+            background-color: var(--bg-color);
+            margin: 1em 0;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        a {
+            color: var(--link-color);
+            transition: color 0.5s;
+        }
+
+        .title { 
+            font-size: 2.4em; 
+            margin-bottom: 1em; 
+        }
+
+        .theme-switch-wrapper {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .theme-switch {
+            display: block;
+            appearance: none;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--btn-bg-color);
+            color: var(--btn-fg-color);
+            border: none;
+            font-size: 1.5rem;
+            padding: 0;
+            margin: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+    </style>
+</head>
+<body data-theme="dark">
+    <div class="theme-switch-wrapper">
+        <button class="theme-switch" onclick="switchTheme()">
+            🌓
+        </button>
+    </div>
+
+    <div class="content">
+        <h1 class="title">GNU/Linux</h1>
+        <p>
+    I'd just like to interject for a moment. What you're referring to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX. Many computer users run a modified version of the GNU system every day, without realizing it. Through a peculiar turn of events, the version of GNU which is widely used today is often called “Linux,” and many of its users are not aware that it is basically the GNU system, developed by the GNU Project. There really is a Linux, and these people are using it, but it is just a part of the system they use.
+
+    Linux is the kernel: the program in the system that allocates the machine's resources to the other programs that you run. The kernel is an essential part of an operating system, but useless by itself; it can only function in the context of a complete operating system. Linux is normally used in combination with the GNU operating system: the whole system is basically GNU with Linux added, or GNU/Linux. All the so-called “Linux” distributions are really distributions of GNU/Linux.
+</p>
+    </div>
+
+    <script>
+        function switchTheme() {
+            let body = document.body;
+            if (body.dataset.theme === "dark") {
+                body.dataset.theme = "light";
+            } else {
+                body.dataset.theme = "dark";
+            }
+        }
+    </script>
+</body>
+</html>
+
